@@ -1,8 +1,9 @@
 import { Square} from "./Square";
-
-const squares = Array(9).fill(null);
+import { useState } from "react";
 
 export function Board() {
+    const [squares, setSquares] = useState(Array(9).fill(null));
+
     return (
         <div className="__board">
             {
