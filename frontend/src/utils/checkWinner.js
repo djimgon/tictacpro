@@ -11,7 +11,11 @@ const winningLines = [
 
 export function checkWinner(squares) {
     for (let i = 0; i < winningLines.length; i++) {
-        console.log(winningLines[i]);
+        const [a, b, c] = winningLines[i];
+
+        console.log("Итерация:", i);
+        console.log("Комбинация:", winningLines[i]);
+        console.log("a =", a, "b =", b, "c =", c);
     }
 
     return null;
