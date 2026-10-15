@@ -1,5 +1,6 @@
 import { Square} from "./Square";
 import { useState } from "react";
+import { checkWinner } from "../utils/checkWinner";
 
 export function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
@@ -11,6 +12,9 @@ export function Board() {
         const nextSquares = squares.slice();
 
         nextSquares[index] = xIsNext ? "X" : "O";
+
+        checkWinner(nextSquares);
+
         setSquares(nextSquares);
         setXIsNext(!xIsNext);
 
