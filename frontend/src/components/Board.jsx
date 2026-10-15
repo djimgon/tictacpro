@@ -5,7 +5,9 @@ export function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     const handleClick = (index) => {
-        console.log("Clicked square:", index)
+        const nextSquares = squares.slice();
+        nextSquares[index] = "X";
+        setSquares(nextSquares);
     }
 
     return (
