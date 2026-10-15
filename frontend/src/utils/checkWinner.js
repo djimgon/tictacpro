@@ -10,7 +10,9 @@ const winningLines = [
 ];
 
 export function checkWinner(squares) {
-    console.log(squares);
+    for (let i = 0; i < winningLines.length; i++) {
+        console.log(winningLines[i]);
+    }
 
     return null;
 }
