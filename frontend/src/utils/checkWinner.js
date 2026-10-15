@@ -8,3 +8,9 @@ const winningLines = [
     [0, 4, 8],
     [6, 4, 2]
 ];
+
+export function checkWinner(squares) {
+    console.log(squares);
+
+    return null;
+}
