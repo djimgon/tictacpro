@@ -13,9 +13,9 @@ export function checkWinner(squares) {
     for (let i = 0; i < winningLines.length; i++) {
         const [a, b, c] = winningLines[i];
 
-        console.log("Итерация:", i);
-        console.log("Комбинация:", winningLines[i]);
-        console.log("a =", a, "b =", b, "c =", c);
+        if (squares[a] !== null && squares[a] === squares[b] && squares[a] === squares[c]) {
+            console.log("Winner found!");
+        }
     }
 
     return null;
