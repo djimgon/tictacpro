@@ -13,7 +13,8 @@ export function Board() {
 
         nextSquares[index] = xIsNext ? "X" : "O";
 
-        checkWinner(nextSquares);
+        const winner = checkWinner(nextSquares);
+        console.log("Winner:", winner);
 
         setSquares(nextSquares);
         setXIsNext(!xIsNext);
