@@ -9,13 +9,11 @@ export function Board() {
     const handleClick = (index) => {
         if(squares[index]) return;
 
+        if (checkWinner(squares)) return;
+
         const nextSquares = squares.slice();
 
         nextSquares[index] = xIsNext ? "X" : "O";
-
-        const winner = checkWinner(nextSquares);
-        console.log("Winner:", winner);
-
         setSquares(nextSquares);
         setXIsNext(!xIsNext);
 
