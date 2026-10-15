@@ -1,5 +1,15 @@
 export function Board() {
     return (
-        <h1>Tic Tac Pro</h1>
+        <div className="__board">
+            <button className="__square"></button>
+            <button className="__square"></button>
+            <button className="__square"></button>
+            <button className="__square"></button>
+            <button className="__square"></button>
+            <button className="__square"></button>
+            <button className="__square"></button>
+            <button className="__square"></button>
+            <button className="__square"></button>
+        </div>
     );
 }
