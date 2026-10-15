@@ -9,7 +9,8 @@ export function Board() {
         if(squares[index]) return;
 
         const nextSquares = squares.slice();
-        nextSquares[index] = "X";
+
+        nextSquares[index] = xIsNext ? "X" : "O";
         setSquares(nextSquares);
         setXIsNext(!xIsNext);
 
