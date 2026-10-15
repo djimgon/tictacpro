@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
+    const [xIsNext, setXIsNext] = useState(true);
 
     const handleClick = (index) => {
         if(squares[index]) return;
@@ -10,6 +11,9 @@ export function Board() {
         const nextSquares = squares.slice();
         nextSquares[index] = "X";
         setSquares(nextSquares);
+        setXIsNext(!xIsNext);
+
+        console.log("Current player is X:", xIsNext);
     }
 
     return (
