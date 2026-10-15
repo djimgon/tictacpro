@@ -1,5 +1,5 @@
-export function Square({ value }){
+export function Square({ value, onClick }){
     return (
-        <button className="square __square">{ value }</button>
+        <button className="square __square" onClick={onClick}>{ value }</button>
     );
 }
