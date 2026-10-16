@@ -22,6 +22,11 @@ export function Board() {
         console.log("Current player is X:", xIsNext);
     }
 
+    const handleReset = () => {
+        setSquares(Array(9).fill(null));
+        setXIsNext(true);
+    };
+
     return (
         <div className="__game">
             <div className="__winner">
