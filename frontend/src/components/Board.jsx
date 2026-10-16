@@ -9,17 +9,13 @@ export function Board() {
     const isDraw = winner === null && squares.every(square => square !== null);
 
     const handleClick = (index) => {
-        if (squares[index]) return;
-
-        if (winner) return;
+        if (squares[index] || winner) return;
 
         const nextSquares = squares.slice();
 
         nextSquares[index] = xIsNext ? "X" : "O";
         setSquares(nextSquares);
         setXIsNext(!xIsNext);
-
-        console.log("Current player is X:", xIsNext);
     }
 
     const handleReset = () => {
