@@ -24,11 +24,13 @@ export function Board() {
 
     return (
         <div className="__game">
-            {winner && (
-                <p className="__winner">
-                    🏆 Winner: {winner}
-                </p>
-            )}
+            <div className="__winner">
+                {winner ? (
+                    <p>🏆 Winner: {winner}</p>
+                ) : isDraw ? (
+                    <p>🤝 Draw!</p>
+                ) : null}
+            </div>
 
             <div className="__board">
                 {squares.map((square, index) => (
