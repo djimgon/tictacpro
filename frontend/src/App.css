@@ -39,3 +39,27 @@ body {
 .__square:hover {
     background: #334155;
 }
+
+.__game {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.__winner {
+    position: absolute;
+    bottom: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    color: #facc15;
+    text-align: center;
+}
+
+.__winner p {
+    margin: 0;
+}

@@ -1,15 +1,16 @@
-import { Square} from "./Square";
-import { useState } from "react";
-import { checkWinner } from "../utils/checkWinner";
+import {Square} from "./Square";
+import {useState} from "react";
+import {checkWinner} from "../utils/checkWinner";
 
 export function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [xIsNext, setXIsNext] = useState(true);
+    const winner = checkWinner(squares);
 
     const handleClick = (index) => {
-        if(squares[index]) return;
+        if (squares[index]) return;
 
-        if (checkWinner(squares)) return;
+        if (winner) return;
 
         const nextSquares = squares.slice();
 
@@ -21,12 +22,22 @@ export function Board() {
     }
 
     return (
-        <div className="__board">
-            {
-                squares.map((square, index) => (
-                    <Square key={ index } value={ square } onClick={ () => handleClick(index) } />
-                ))
-            }
+        <div className="__game">
+            {winner && (
+                <p className="__winner">
+                    🏆 Winner: {winner}
+                </p>
+            )}
+
+            <div className="__board">
+                {squares.map((square, index) => (
+                    <Square
+                        key={index}
+                        value={square}
+                        onClick={() => handleClick(index)}
+                    />
+                ))}
+            </div>
         </div>
     );
 }
