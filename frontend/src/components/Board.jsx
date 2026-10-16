@@ -46,6 +46,14 @@ export function Board() {
                     />
                 ))}
             </div>
+
+            <button
+                id="reset"
+                className="__reset"
+                onClick={handleReset}
+            >
+                New Game
+            </button>
         </div>
     );
 }
