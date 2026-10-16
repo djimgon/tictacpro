@@ -6,6 +6,7 @@ export function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [xIsNext, setXIsNext] = useState(true);
     const winner = checkWinner(squares);
+    const isDraw = winner === null && squares.every(square => square !== null);
 
     const handleClick = (index) => {
         if (squares[index]) return;
